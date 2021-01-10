@@ -1,0 +1,45 @@
+.textScroller {
+  height: 1.2em;
+  overflow: hidden;
+  display: inline-flex;
+  .textScrollerInner {
+    transition: 150ms ease-in-out;
+    display: inline-flex;
+    flex-direction: column;
+    span {
+      height: 120%;
+      line-height: 120%;
+      font-weight: 400;
+    }
+    &.center {
+      align-items: center;
+    }
+    &.underline {
+      span {
+        text-decoration: underline;
+      }
+    }
+    &.fontWeight {
+      &-100 {
+        span {
+          font-weight: 100;
+        }
+      }
+      &-200 {
+        span {
+          font-weight: 200;
+        }
+      }
+      &-300 {
+        span {
+          font-weight: 300;
+        }
+      }
+      &-400 {
+        span {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+@import 'styles/functions';
+@import "styles/variables";
+
+
+.projects {
+  .projectList {
+    position: relative;
+    overflow-y: visible;
+    min-width: calc(#{$project-width-mobile} + 2em);
+    width: calc(#{$project-width-mobile} + 2em);
+    transition: all 250ms ease-in-out;
+
+    @include respond-above(md) {
+      min-width: calc(#{$project-width-tablet} + 6em);
+      width: calc(#{$project-width-tablet} + 6em);
+    }
+
+
+    .projectListInner {
+      display: flex;
+      flex-direction: row;
+
+
+      scroll-behavior: smooth;
+      width: calc(100vw);
+      padding: 50px;
+      padding-top: 2em;
+      padding-bottom: 3em;
+      margin-left: -15vw;
+      padding-left: 15vw;
+
+      @include tablet {
+        margin-left: -10vw;
+        padding-left: 10vw;
+      }
+      @include desktop {
+        margin-left: -20vw;
+        padding-left: 20vw;
+      }
+
+      overflow-y: visible;
+      overflow-x: hidden;
+
+
+
+    }
+  }
+}
+
+.categorySelector {
+  display: inline;
+  list-style: none;
+  padding-left: 0;
+
+  padding: 15px;
+  font-weight: 100;
+  li {
+    display: inline-block;
+    margin-left: 1em;
+    cursor: pointer;
+
+    &:first-child {
+      margin-left: 0;
+    }
+    &.active {
+      text-decoration: underline;
+      //font-weight: bold;
+    }
+  }
+}
+
+.arrow {
+  &Left, &Right {
+    position: absolute !important;
+    @include glass;
+    bottom: 0;
+    @include respond-above(md) {
+      top: 50%;
+      bottom: auto;
+    }
+    margin-left: 0;
+    cursor: pointer;
+
+  }
+  &Left {
+    left: 30%;
+    @include respond-above(md) {
+      left: 0;
+    }
+  }
+
+  &Right {
+    right: 30%;
+    @include respond-above(md) {
+      right: 0;
+    }
+  }
+}

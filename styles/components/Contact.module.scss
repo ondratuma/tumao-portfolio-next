@@ -1,0 +1,365 @@
+@import "../functions";
+
+.contact {
+  @include glass;
+
+  width: 100%;
+  padding: 25px;
+  padding-bottom: 0;
+
+  margin-bottom: 100px;
+  @include tablet {
+    margin-bottom: 0;
+  }
+
+  @include respond-above(md) {
+    width: 100%;
+  }
+
+  input, textarea {
+    background: none;
+  }
+
+  h1 {
+    font-weight: 100;
+    margin-top: 0;
+
+    @include respond-above(md) {
+      font-size: 3em;
+      margin-top: 0.25em;
+    }
+    flex-direction: row;
+    text-transform: uppercase;
+  }
+
+  .contacts {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @include respond-above(xs) {
+      justify-content: space-between;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: calc(1.5em + 20px + 15px + 2px);
+      height: 100%;
+
+      justify-content: space-between;
+
+      @include respond-above(xs) {
+        flex-direction: row;
+      }
+      .about {
+        background-color: rgb(var(--theme-background-color));
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 2em;
+        @include tablet {
+          flex-direction: column;
+          margin-right: 20px;
+          margin-bottom: 0;
+        }
+        justify-content: space-between;
+        border: 1px solid rgb(var(--theme-text-color));
+        position: relative;
+
+        .text {
+          font-weight: 100;
+          padding: 20px 20px;
+          width: 50%;
+          p {
+            margin-bottom: 0;
+          }
+
+          .name {
+            font-size: 1.5em;
+          }
+
+          .email {
+            font-size: 1em;
+          }
+
+        }
+
+        .images {
+          width: 50%;
+          position: relative;
+          height: 100px;
+          @include tablet{
+            width: 100%;
+            height: 150px;
+          }
+          .cover {
+            background-size: cover;
+            background-position: center center;
+          }
+
+          .social {
+            display: inline-block;
+            width: 50%;
+            height: 100%;
+
+            .linkedin {
+              height: 50%;
+              display: block;
+              .cover {
+                background-image: url(../../public/square-linkedin-512.png);
+                background-size: cover;
+              }
+
+            }
+
+            .facebook {
+              height: 50%;
+              display: block;
+              .cover {
+                background-image: url(../../public/facebook.png);
+                background-size: cover;
+              }
+
+            }
+
+          }
+
+
+          .git {
+            position: relative;
+            display: inline-block;
+
+            width: 50%;
+            height: 100%;
+            .cover {
+              background-image: url(../../public/GitHub-Mark.png);
+              background-size: cover;
+              background-position: center center;
+            }
+
+          }
+
+          .facebook, .linkedin, .git {
+            position: relative;
+            overflow: hidden;
+            .cover {
+              transition: 200ms;
+            }
+
+            &:hover {
+              cursor: pointer;
+              .cover {
+                transform: scale(1.1);
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+
+      .form {
+        width: 100%;
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 0;
+        @include desktop{
+          width: 75%;
+        }
+        .group {
+          background-color: rgb(var(--theme-background-color));
+          position: relative;
+          margin-bottom: 15px;
+          label {
+            position: absolute;
+            font-weight: 400;
+            transform: translate(10px,-50%);
+            font-size: 1em;
+            transition: 200ms ease-in-out;
+            width: 100%;
+            pointer-events: none;
+            font-weight: 100;
+            left: 0.75em;
+          }
+
+          input {
+            + label {
+              top: 50%;
+            }
+
+          }
+
+          textarea {
+            + label {
+              top: calc(1.5em);
+              font-size: 1em;
+            }
+
+          }
+
+          input, textarea {
+            box-sizing: border-box;
+            display: block;
+            width: 100%;
+            padding-top: 1.5em;
+            padding-bottom: 1em;
+            padding-left: 1.5em;
+            padding-right: 1.5em;
+            border: 1px solid rgb(var(--theme-text-color));
+            font-size: 1em;
+            color: rgb(var(--theme-text-color));
+            &:not(:placeholder-shown), &:focus {
+              + label {
+                top: 0%;
+                transform: translate(10px,5px);
+                font-size: 0.7em;
+              }
+              outline: none;
+              border: 1px solid rgb(var(--theme-text-color));
+            }
+
+            &:read-only {
+              transition: 200ms ease-in all;
+              //background-color: rgba(0, 0, 0, 0.01);
+              color: rgba(0, 0, 0, 0.4);
+              ~ label {
+                color: rgba(0, 0, 0, 0.4);
+              }
+            }
+
+            &:required {
+              + label {
+                &:after {
+                  content: "*";
+                  display: inline-block;
+                  position: absolute;
+                  right: 1.8em;
+                }
+
+              }
+            }
+
+
+          }
+
+          &.error {
+            border-color: #A02629;
+            color: #A02629;
+            background-color: #FFCCCC;
+          }
+        }
+
+
+
+
+
+        .email {
+          width: 100%;
+          @include desktop{
+            width: 50%;
+          }
+        }
+
+
+        .text {
+          width: 100%;
+        }
+
+
+        .submit {
+          background-color: rgb(var(--theme-background-color));
+          @include tag;
+          background: transparent;
+          border: 1px solid rgb(var(--theme-text-color));
+          display: inline-flex;
+          padding: 0.5em 1em;
+          overflow: hidden;
+          box-sizing: content-box;
+          outline: none;
+          transition: 200ms all ease-in-out;
+          font-weight: 100;
+          margin: 0;
+          font-size: 1em;
+          cursor: pointer;
+          &:focus-within {
+            color: rgb(var(--theme-background-color));
+          }
+
+
+          .scroll-box {
+            display: inline-block;
+            transition: 200ms ease-in-out;
+
+            a,input[type="submit"] {
+              margin-bottom: 0;
+              padding: 0px 30px;
+              display: block;
+              width: 100%;
+              height: 100%;
+              background: transparent;
+              outline: none;
+              border: none;
+              box-sizing: border-box;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              &:hover {
+                cursor: pointer;
+                outline: none;
+              }
+
+              &:focus {
+                outline: none;
+                color: rgb(var(--theme-background-color));
+              }
+
+              &.send {
+                &:hover {
+                  color: rgb(var(--theme-background-color));
+                }
+
+              }
+
+              &.sent {
+                background-color: rgb(var(--theme-background-color));
+              }
+              &.sending {
+                background-color: rgb(var(--theme-background-color));
+              }
+
+            }
+
+
+            &[active="result"] {
+
+            }
+            &[active="sending"] {
+              transform: translateY(-33.333%);
+            }
+            &[active="send"] {
+              transform: translateY(-66.666%);
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+  }
+
+}
+
+.cover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}

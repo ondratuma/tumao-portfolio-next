@@ -1,0 +1,82 @@
+.icon {
+    height: 2em;
+    width: 2em;
+    position: relative;
+    border-radius: 100%;
+    margin: 0;
+    display: inline-block;
+    transition: 250ms ease-in-out;
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        transform-origin: center center;
+        top: 50%;
+        left: 20%;
+        right: 20%;
+        height: 2px;
+        background-color: rgb(var(--theme-text-color));
+        transition: 250ms ease-in-out;
+    }
+
+    &.arrow {
+        &-right, &-left {
+            &::before {
+                transform-origin: right center;
+                top: 50%;
+                left: 30%;
+                right: 25%;
+                transform:  translateY(-50%) rotate(45deg);
+            }
+            &::after {
+                transform-origin: right center;
+                top: 50%;
+                left: 30%;
+                right: 25%;
+                transform: translateY(-50%) rotate(-45deg);
+            }
+        }
+
+        &-left {
+            transform: rotate(180deg);
+            &:hover {
+                transform: scale(1.1) rotate(180deg);
+                //box-shadow: none;
+            }
+        }
+        &-right {
+            &:hover {
+                transform: scale(1.1);
+                //box-shadow: none;
+            }
+        }
+    }
+
+
+    &.cancel {
+        border-color: transparent;
+      &::before {
+          transform: translateY(-50%) rotate(45deg);
+      }
+        &::after {
+            transform: translateY(-50%) rotate(-45deg);
+        }
+    }
+    &.approve {
+        border-color: transparent;
+        &::before, &::after {
+            background-color: rgb(var(--theme-text-color));
+        }
+        &::before {
+            top: 65%;
+            left: 30%;
+            right: 30%;
+            transform: translateX(-15%) rotate(45deg) translateX(-50%);
+        }
+        &::after {
+            top: 65%;
+            transform: translateX(-15%) rotate(-45deg)  translateX(50%);
+        }
+    }
+}
+

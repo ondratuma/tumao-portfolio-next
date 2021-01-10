@@ -1,0 +1,37 @@
+@import 'styles/functions';
+.ul {
+  list-style: none;
+  position: fixed;
+  display: inline-block;
+
+  bottom: 0;
+
+  transform-origin: left center;
+  left: 2em;
+
+  @include desktop {
+    left: 180px;
+  }
+  li {
+    display: inline-block;
+    margin-left: 1em;
+    cursor: pointer;
+    font-weight: 100;
+    &.active {
+      text-decoration: underline;
+    }
+    a {
+
+    }
+  }
+
+
+  opacity: 0;
+  transform: rotateZ(-90deg) translateY(-50px);
+}
+
+.visible {
+  transition: all 250ms ease-in-out;
+  opacity: 1;
+  transform: rotateZ(-90deg) translateY(0);
+}
