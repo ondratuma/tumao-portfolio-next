@@ -1,0 +1,51 @@
+@import 'styles/functions';
+
+.block {
+  scroll-padding: 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+  padding-left: 15vw;
+
+  margin-bottom: 200px;
+  @include tablet {
+    margin-bottom: 0;
+  }
+
+
+  @include tablet {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  @include desktop {
+    padding-left: 20%;
+    padding-right: 10%;
+  }
+
+
+  h1 {
+    margin-bottom: 0.5em;
+  }
+  .inner {
+    overflow: visible;
+
+    @include tablet {
+      overflow: visible;
+      min-height: 100px;
+    }
+    //box-shadow: 0 3px 20px rgba(0,0,0,0.2);
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+  }
+}
+
+
+

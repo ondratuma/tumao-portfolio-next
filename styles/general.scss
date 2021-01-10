@@ -1,0 +1,86 @@
+@import "functions";
+
+
+html {
+  scroll-behavior: smooth;
+  @include respond-above(xl){
+    font-size: 1.5em;
+  }
+  --theme-text-color: 0, 0, 0;
+  --theme-background-color: 255, 255, 255;
+}
+
+@media(prefers-color-scheme: dark) {
+  * {
+    --theme-text-color: 255, 255, 255;
+    --theme-background-color: 20, 20, 20;
+  }
+
+  img {
+    filter: brightness(0.8) saturate(1.2);
+  }
+}
+
+body {
+  //background: url('../public/optimized/foggy-1149637.jpg');
+  //background-size: 1500px 1000px;
+  //background-repeat: no-repeat;
+  //background-attachment: fixed;
+  //background-position: left top;
+  //
+  //@include tablet {
+  //  background: none;
+  //}
+  color: rgb(var(--theme-text-color));
+  background-color: rgb(var(--theme-background-color));
+
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 1500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 3000ms ease-in;
+}
+
+.example-appear {
+  opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity 1.5s ease-in;
+}
+
+.lines {
+  width: 70%;
+  max-width: 700px;
+  margin: auto;
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  left: 50%;
+  transform: translate(-50%,0);
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #e5e5e5;
+  }
+}

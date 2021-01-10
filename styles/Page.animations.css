@@ -1,0 +1,96 @@
+.example-enter {
+    opacity: 0.00;
+}
+
+.example-enter.example-enter-active {
+    opacity: 1;
+    transition: opacity 750ms ease-in;
+}
+
+.example-leave {
+    opacity: 1;
+}
+
+.example-leave.example-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
+
+.example-appear {
+    opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+    opacity: 1;
+    transition: opacity .5s ease-in;
+}
+
+.example-enter-done, .example-appear-done {
+    opacity: 1 !important;
+}
+
+.footer-black-enter {
+    opacity: 0.00;
+}
+
+.footer-black-enter.footer-black-enter-active {
+    opacity: 0.6;
+    transition: opacity 750ms ease-in;
+}
+
+.footer-black-leave {
+    opacity: 0.6;
+}
+
+.footer-black-leave.footer-black-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
+
+.footer-black-appear {
+    opacity: 0.01;
+}
+
+.footer-black-appear.footer-black-appear-active {
+    opacity: 0.6;
+    transition: opacity .5s 1.5s ease-in;
+}
+
+
+.footer-black-enter-done, .footer-black-appear-done {
+    opacity: 0.6 !important;
+}
+
+
+
+.footer-white-enter {
+    opacity: 0.00;
+}
+
+.footer-white-enter.footer-white-enter-active {
+    opacity: 0.2;
+    transition: opacity 750ms ease-in;
+}
+
+.footer-white-leave {
+    opacity: 0.2;
+}
+
+.footer-white-leave.footer-white-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
+
+.footer-white-appear {
+    opacity: 0.01;
+}
+
+.footer-white-appear.footer-white-appear-active {
+    opacity: 0.2;
+    transition: opacity .5s 1.5s ease-in;
+}
+
+
+.footer-white-enter-done, .footer-white-appear-done {
+    opacity: 0.2 !important;
+}

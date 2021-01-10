@@ -1,0 +1,31 @@
+{
+  "name": "tumao-portfolio-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3005",
+    "build": "next build",
+    "start": "next start -p 8080 "
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "framer-motion": "^3.0.0",
+    "i18next": "^19.8.4",
+    "next": "10.0.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-gtm-module": "^2.0.11",
+    "react-i18next": "^11.8.4",
+    "react-markdown": "^5.0.3",
+    "react-transition-group": "^4.4.1",
+    "sass": "^1.29.0",
+    "scroll-behavior-polyfill": "^2.0.13",
+    "smoothscroll-polyfill": "^0.4.4",
+    "swr": "^0.3.10"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.7",
+    "@types/react": "^16.9.56",
+    "typescript": "^4.0.5"
+  }
+}
